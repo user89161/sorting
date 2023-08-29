@@ -1,0 +1,14 @@
+.array-container {
+    position: relative;
+    left: ((1-100*.8)*.5)%;
+    
+
+}
+
+.array-bar{
+    position:relative;
+    width: .8%;
+    background-color: blue;
+    display: inline-block;
+    margin: 0 1px;
+}
