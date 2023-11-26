@@ -51,7 +51,7 @@ export default class SortingVisualizer extends React.Component{
             setTimeout(() => {
               const [barOneIdx, newHeight] = animations[i];
               const barOneStyle = arrayBars[barOneIdx].style;
-              barOneStyle.height = `${newHeight}px`;
+              barOneStyle.height = `${newHeight*.7}px`;
             }, i * TIME);
           }
         }
@@ -84,7 +84,7 @@ export default class SortingVisualizer extends React.Component{
                 
                     const index1style = arrayBars[index].style;
                 
-                    index1style.height = `${value}px`;
+                    index1style.height = `${value*.7}px`;
                     index1style.color = 'blue';
                 }, TIME*i );
             }
@@ -119,7 +119,7 @@ export default class SortingVisualizer extends React.Component{
                 
                     const index1style = arrayBars[index].style;
                 
-                    index1style.height = `${value}px`;
+                    index1style.height = `${value*.7}px`;
                     index1style.color = 'blue';
                 }, TIME*i );
             }
@@ -154,7 +154,7 @@ export default class SortingVisualizer extends React.Component{
                 
                     const index1style = arrayBars[index].style;
                 
-                    index1style.height = `${value}px`;
+                    index1style.height = `${value*.7}px`;
                     index1style.color = 'blue';
                 }, TIME*i );
             }
@@ -186,33 +186,36 @@ export default class SortingVisualizer extends React.Component{
         const {array}=this.state;
 
         return(
+
+            
             <>
+            
+<div id ="buttons">
+<button onClick={() => this.resetArray ()}>New Array</button>
+<button onClick={() => this.MergeSort ()}>Merge Sort</button>
+<button onClick={() => this.QuickSort ()}>QuickSort</button>
+<button onClick={() => this.BubbleSort ()}>BubbleSort</button>
+<button onClick={() => this.HeapSort ()}>HeapSort</button>
+<button onClick={() => this.testSortingAlgos ()}>Test Sorting Algos</button>
+
+</div>
             <div className="array-container">
             {array.map((value,idx)=> (
                 <div 
                 className = "array-bar" 
                 key ={idx}
-                style = {{height: `${value}px`}}></div>
+                style = {{height: `${value*.7}px`}}></div>
 
                 
                  
             
             ))}
            
+           </div>
+
 
        
-            </div>
-
-
-            <div>
-            <button onClick={() => this.resetArray ()}>New Array</button>
-            <button onClick={() => this.MergeSort ()}>Merge Sort</button>
-            <button onClick={() => this.QuickSort ()}>QuickSort</button>
-            <button onClick={() => this.BubbleSort ()}>BubbleSort</button>
-            <button onClick={() => this.HeapSort ()}>HeapSort</button>
-            <button onClick={() => this.testSortingAlgos ()}>Test Sorting Algos</button>
-
-            </div>
+      
 
             </>
 

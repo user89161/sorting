@@ -12,3 +12,9 @@
     display: inline-block;
     margin: 0 1px;
 }
+
+#buttons button {
+    font-size: 30px; /* Adjust as needed */
+    padding: 10px 20px; /* Adjust as needed */
+  }
+  
